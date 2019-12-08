@@ -20,7 +20,11 @@
   "devDependencies": {
     "@neogeek/eslint-config-standards": "github:neogeek/eslint-config-standards",
     "babel-eslint": "10.0.3",
-    "eslint": "6.7.2"
+    "eslint": "6.7.2",
+    "pkg": "4.4.0"
+  },
+  "scripts": {
+    "bundle": "pkg package.json --out-path builds/"
   },
   "keywords": [
     "unity"
