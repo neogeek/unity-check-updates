@@ -91,7 +91,7 @@ updateNotifier({pkg}).notify();
         ],
         ...results.map(({currentVersion, dependency, nextVersion}) => [
             dependency,
-            `${chalk.grey(currentVersion)} -> ${chalk.green(nextVersion)}`
+            `${chalk.grey(currentVersion)} → ${chalk.green(nextVersion)}`
         ])
     ]);
 
