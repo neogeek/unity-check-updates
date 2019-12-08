@@ -34,15 +34,16 @@ $ ucu -u
   Usage
     $ ucu [options]
   Options
-  --update, -u        Updated all packages to latest.
-  --packageFile, -p   Package file path. (Default: Packages/manifest.json)
-  --help, -h          Display this help message.
-  --version, -v       Display the current installed version.
+  --update, -u         Updated all packages to latest.
+  --packageFile, -p    Package file path. (Default: Packages/manifest.json)
+  --allowPreview, -a   Allow preview packages.
+  --help, -h           Display this help message.
+  --version, -v        Display the current installed version.
 ```
 
 ## API
 
-### `await unityCheckUpdate(path)`
+### `await unityCheckUpdate(string path[, object options])`
 
 ```javascript
 (async () => {
@@ -54,7 +55,7 @@ $ ucu -u
 })();
 ```
 
-### `updateDependencies(path, results)`
+### `updateDependencies(string path, object[] results)`
 
 ```javascript
 updateDependencies(path, [{

@@ -19,13 +19,19 @@ const cli = meow(
       Usage
         $ ucu [options]
       Options
-      ${chalk.yellow('--update, -u')}        Updated all packages to latest.
-      ${chalk.yellow('--packageFile, -p')}   Package file path. (Default: Packages/manifest.json)
-      ${chalk.yellow('--help, -h')}          Display this help message.
-      ${chalk.yellow('--version, -v')}       Display the current installed version.
+      ${chalk.yellow('--update, -u')}         Updated all packages to latest.
+      ${chalk.yellow('--packageFile, -p')}    Package file path. (Default: Packages/manifest.json)
+      ${chalk.yellow('--allowPreview, -a')}   Allow preview packages.
+      ${chalk.yellow('--help, -h')}           Display this help message.
+      ${chalk.yellow('--version, -v')}        Display the current installed version.
   `,
     {
         'flags': {
+            'allowPreview': {
+                'alias': 'a',
+                'default': false,
+                'type': 'boolean'
+            },
             'help': {
                 'alias': 'h',
                 'default': false,
@@ -61,7 +67,10 @@ updateNotifier({pkg}).notify();
 
     process.stdout.write(`Checking ${path}\n\n`);
 
-    const results = await unityCheckUpdates(path);
+    const results = await unityCheckUpdates(
+        path,
+        {'allowPreview': cli.flags.allowPreview}
+    );
 
     if (results.length === 0) {
 
