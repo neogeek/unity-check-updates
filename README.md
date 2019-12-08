@@ -2,6 +2,8 @@
 
 > 🔧 Command line tool for updating UPM packages.
 
+[![NPM Version](http://img.shields.io/npm/v/unity-check-updates.svg?style=flat)](https://www.npmjs.org/package/unity-check-updates)
+
 ![](screenshot.png)
 
 ## Install
